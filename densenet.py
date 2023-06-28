@@ -32,7 +32,7 @@ class BottleneckBlock(nn.Module):
                                stride=1, padding=0, bias=False)
         self.bn2 = nn.BatchNorm2d(inter_planes)
         self.conv2 = nn.Conv2d(inter_planes, out_planes, kernel_size=3,
-                               stride=1, padding=0, bias=False)
+                               stride=1, padding=1, bias=False)
         self.droprate = droprate
 
     def forward(self, x):
