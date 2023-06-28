@@ -239,6 +239,9 @@ def validate(val_loader, model, criterion, epoch):
             loss=losses,
             top1=top1
         ))
+    if args.tensorboard:
+        log_value('val_loss', losses.avg, epoch)
+        log_value('val_acc', top1.avg, epoch)
     return top1.avg
 
 
